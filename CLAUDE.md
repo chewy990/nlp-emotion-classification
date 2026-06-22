@@ -58,7 +58,7 @@ Important: the comments are already labelled. Filtering means selecting rows tha
 Use this model structure unless there is a strong reason to change it:
 
 - Baseline: majority-class classifier.
-- Statistical model: bag-of-words or TF-IDF with Multinomial Naive Bayes or Logistic Regression.
+- Statistical models: bag-of-words with Multinomial Naive Bayes, and TF-IDF with Logistic Regression (both implemented for comparison).
 - Embedding model: Keras/TensorFlow Embedding layer with a simple neural network.
 - Analysis: classification report, macro F1, weighted F1, confusion matrices, class distribution chart, and misclassified examples.
 
