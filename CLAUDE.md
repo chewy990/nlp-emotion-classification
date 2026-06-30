@@ -59,8 +59,8 @@ Use this model structure unless there is a strong reason to change it:
 
 - Baseline: majority-class classifier.
 - Statistical models: bag-of-words with Multinomial Naive Bayes, and TF-IDF with Logistic Regression (both implemented for comparison).
-- Embedding model: Keras/TensorFlow Embedding layer with a simple neural network.
-- Analysis: classification report, macro F1, weighted F1, confusion matrices, class distribution chart, and misclassified examples.
+- Embedding model: Keras/TensorFlow Embedding layer with a simple neural network, plus a class-weighted ablation variant (Section 8b) that mirrors the TF-IDF + Logistic Regression model's `class_weight="balanced"` to test whether it closes the macro F1 gap.
+- Analysis: classification report, macro F1, weighted F1, confusion matrices, class distribution chart, misclassified examples, and the class-weighting ablation comparison.
 
 ## Working Rules
 
@@ -69,6 +69,7 @@ Use this model structure unless there is a strong reason to change it:
 - Do not commit downloaded datasets, cache folders, virtual environments, model binaries, or notebook checkpoints.
 - Preserve the coursework framing and the six-class GoEmotions simplification.
 - If adding improvements, prioritise report clarity, reproducibility, and evaluation quality.
+- Note: the class-weighted embedding model (Section 8b) is not fully run-to-run deterministic despite fixed seeds (TensorFlow's oneDNN CPU ops reorder floating-point operations between runs). This is documented as an honest limitation in the notebook rather than hidden or "fixed" — don't overwrite that caveat with a single cherry-picked run.
 
 ## Git Workflow
 
