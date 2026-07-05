@@ -17,10 +17,25 @@
 
 ## Chosen Project Direction
 - Topic: comparative emotion classification in short user-generated text.
-- Proposed title: Comparative Emotion Classification in Short User-Generated Text Using Statistical and Embedding-Based Models.
+- Title (current, shortened): Comparative Emotion Classification in Short Text.
 - Dataset: Google Research GoEmotions dataset, using Reddit comments with existing human emotion labels.
-- Simplification: filter the original 27 emotion categories plus neutral to six target classes only: joy, anger, fear, sadness, surprise, and neutral.
-- Filtering means selecting rows that already have one of the target labels; do not manually relabel comments.
+- Simplification: filter the original 27 emotion categories plus neutral to six target classes only, namely joy, anger, fear, sadness, surprise, and neutral.
+- Filtering means selecting rows that already have one of the target labels. Do not manually relabel comments.
+
+## Writing Style and Tone (important)
+The user (Jaslyn) has firm writing preferences. Apply them to every markdown cell and any prose for this project.
+- No em dashes anywhere. Use commas, full stops, or parentheses instead. En dashes are allowed only in number and page ranges.
+- No semicolons in prose, including in citation groups. Split sentences or use "and".
+- No "label: explanation" colons, and no bold mini-header lead-ins on explanatory paragraphs (for example, do not open with "**How TF-IDF works.**"). Let explanations flow as plain sentences. The user edits these out by hand.
+- Balance plain language with academic professionalism. Cut bloat and self-important framing, but keep technical terms, citations, and a formal register. Plain is not dumbed-down.
+- Harvard (Cite Them Right) citations throughout: in-text "and" not "&", "et al." for three or more authors. Reference list with single-quoted sentence-case article titles, italic journal or book titles, "pp." page ranges, and "Available at: url (Accessed: date)." for online sources.
+- Every reference must be cited in-text (no orphans) and must be real and verifiable with a working link.
+- Keep coursework, course, rubric, and submission wording out of the body prose. Only the subtitle header (module line, name, student ID) identifies the coursework.
+
+## Deliverable Format
+- One notebook, submitted as a single PDF containing both the written sections and the code with outputs.
+- The written report is now integrated into the notebook itself, structured to the rubric. The old standalone report.md was removed.
+- No LaTeX or pandoc in the environment. Export via nbconvert to HTML with embedded images, then print to PDF from the browser with background graphics on.
 
 ## Planned Modelling Approach
 - Baseline: majority-class classifier.
