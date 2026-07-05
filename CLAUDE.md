@@ -92,6 +92,21 @@ The user (Jaslyn) has specific, firmly-held writing preferences. Follow them in 
 - If adding improvements, prioritise report clarity, reproducibility, and evaluation quality.
 - Note: the class-weighted embedding model (Section 8b) is not fully run-to-run deterministic despite fixed seeds (TensorFlow's oneDNN CPU ops reorder floating-point operations between runs). This is documented as an honest limitation in the notebook rather than hidden or "fixed" — don't overwrite that caveat with a single cherry-picked run.
 
+## Planned Improvements (deferred, not yet done)
+
+Current state is judged a solid distinction. These are the enhancements identified to push toward a top distinction, all kept inside the brief (stay on pre-midterm topics; BERT/transformers remain future-work only). Pick up here in a later session.
+
+Technical (ranked by payoff per effort):
+1. **Multi-seed averaging + error bars.** Run the two embedding models over ~5 seeds, report mean ± std macro F1, add error bars to the comparison chart. This resolves the run-to-run reproducibility caveat the notebook currently only flags. Strengthens sections 7, 9, 10.
+2. **Learning curve vs training-set size.** Train each model on 10-100% of the data and plot macro F1. Empirically tests the discussion's asserted claim that the neural advantage grows with data scale. Strengthens section 9.
+3. **Pretrained GloVe vs learned embeddings.** Add a neural variant using frozen GloVe vectors alongside the learned embedding, framed as task-specific vs general representations (embeddings are a covered topic).
+4. **Lexicon baseline.** Add an NRC-lexicon classifier (Mohammad and Turney, already cited) as an extra course-aligned comparator.
+
+Written / literature:
+- Sections 1-2 literature is a bit textbook-heavy. Add 2-3 domain-specific emotion-classification references.
+- Add **Demszky et al.'s own reported GoEmotions F1 as a published baseline** in section 6, and use it to contextualise results in section 9 (this also satisfies the rubric's "already published baseline" option).
+- Before submitting, confirm each 200-500 / 200-400 word section is within its limit.
+
 ## Git Workflow
 
 This repository is intended for work across laptop and PC.
