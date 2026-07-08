@@ -92,20 +92,24 @@ The user (Jaslyn) has specific, firmly-held writing preferences. Follow them in 
 - If adding improvements, prioritise report clarity, reproducibility, and evaluation quality.
 - Note: the class-weighted embedding model (Section 8b) is not fully run-to-run deterministic despite fixed seeds (TensorFlow's oneDNN CPU ops reorder floating-point operations between runs). This is documented as an honest limitation in the notebook rather than hidden or "fixed" — don't overwrite that caveat with a single cherry-picked run.
 
-## Planned Improvements (deferred, not yet done)
+## Enhancements Status
 
-Current state is judged a solid distinction. These are the enhancements identified to push toward a top distinction, all kept inside the brief (stay on pre-midterm topics; BERT/transformers remain future-work only). Pick up here in a later session.
+Done (integrated and re-run):
+1. **Multi-seed averaging + error bars** (Section 7.4). Both embedding variants over 5 seeds, mean ± std macro F1, error-bar chart. Resolved the reproducibility caveat with measured numbers.
+2. **Learning curve vs training-set size** (Section 7.7). NB, TF-IDF+LR, and the embedding (3-seed mean) across 10-100% of the data. Empirically confirms the embedding is data-hungry and still climbing at full data.
+3. **Literature strengthening.** Added Bostan and Klinger (2018) and Saravia et al. (2018) as domain references, and Demszky et al.'s reported BERT macro F1 (0.46 on the 28-label taxonomy) as a published baseline in Section 6, benchmarked in Section 9. 17 references, all cited, all verified with working links.
+4. **Structure/style/word-count/bloat pass.** Heading levels normalised, stale cross-refs fixed, every scored section within its word limit, and the triple-explained metrics collapsed to a single canonical version in Section 4 (the inline notes now point to it).
 
-Technical (ranked by payoff per effort):
-1. **Multi-seed averaging + error bars.** Run the two embedding models over ~5 seeds, report mean ± std macro F1, add error bars to the comparison chart. This resolves the run-to-run reproducibility caveat the notebook currently only flags. Strengthens sections 7, 9, 10.
-2. **Learning curve vs training-set size.** Train each model on 10-100% of the data and plot macro F1. Empirically tests the discussion's asserted claim that the neural advantage grows with data scale. Strengthens section 9.
-3. **Pretrained GloVe vs learned embeddings.** Add a neural variant using frozen GloVe vectors alongside the learned embedding, framed as task-specific vs general representations (embeddings are a covered topic).
-4. **Lexicon baseline.** Add an NRC-lexicon classifier (Mohammad and Turney, already cited) as an extra course-aligned comparator.
+Intentionally skipped (fragile, low payoff): pretrained GloVe (needs gensim, fragile against numpy 2.5, large download) and an NRC lexicon baseline (needs nrclex/nltk plus data). Revisit only if a clean, dependency-light route appears.
 
-Written / literature:
-- Sections 1-2 literature is a bit textbook-heavy. Add 2-3 domain-specific emotion-classification references.
-- Add **Demszky et al.'s own reported GoEmotions F1 as a published baseline** in section 6, and use it to contextualise results in section 9 (this also satisfies the rubric's "already published baseline" option).
-- Before submitting, confirm each 200-500 / 200-400 word section is within its limit.
+## Lecturer Feedback (Derrick Peh, received 8 July 2026)
+
+Feedback annotations on the submitted midterm PDF (`CM3060-NLP_Jaslyn_Midterms(lecturer's notes).pdf`):
+- Three "Good" marks on early sections (pages 3 and 8) — the introduction/methodology framing landed well.
+- Page 36: "Include any limitations that you might have too."
+- Page 37: "What other areas for further study / improvements?"
+
+Both action points target Section 10 (Project summary and reflections). The current Section 10 partly covers them (the oneDNN reproducibility limitation, plus GloVe/BERT/seed-averaging/lexicon as future work), but it should be strengthened to answer the feedback directly: add a short, explicit list of limitations (for example the deliberately simple architecture, single dataset and domain, no hyperparameter search, reliance on one train/test split) and make the future-study directions more prominent. Section 10 has room (about 312 of 400 words).
 
 ## Git Workflow
 

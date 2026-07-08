@@ -37,11 +37,16 @@ The user (Jaslyn) has firm writing preferences. Apply them to every markdown cel
 - The written report is now integrated into the notebook itself, structured to the rubric. The old standalone report.md was removed.
 - No LaTeX or pandoc in the environment. Export via nbconvert to HTML with embedded images, then print to PDF from the browser with background graphics on.
 
-## Planned Modelling Approach
+## Modelling Approach (as implemented)
 - Baseline: majority-class classifier.
-- Statistical model: TF-IDF or bag-of-words with Multinomial Naive Bayes or Logistic Regression.
-- Embedding model: Keras/TensorFlow Embedding layer with a simple neural network.
-- Analysis: compare models using overall metrics, per-class F1-scores, confusion matrices, and examples of misclassified comments.
+- Statistical models: bag-of-words with Multinomial Naive Bayes, and TF-IDF with Logistic Regression (class-weighted).
+- Embedding model: Keras Embedding layer with a simple neural network, plus a class-weighted ablation (Section 7.3).
+- Robustness: multi-seed stability of macro F1 (Section 7.4) and a learning curve versus training-set size (Section 7.7).
+- Analysis: overall metrics, per-class F1, confusion matrices, error examples, and a published-baseline comparison against Demszky et al. (2020).
+
+## Lecturer Feedback (Derrick Peh, 8 July 2026)
+- Three "Good" marks on the early sections. Two action points, both on Section 10: "Include any limitations that you might have too" and "What other areas for further study / improvements?".
+- Next step: strengthen Section 10 with an explicit limitations list and clearer future-study directions (it has word-count room). Full detail in CLAUDE.md.
 
 ## GitHub / Multi-Device Workflow
 - Keep the project in a GitHub repository so work can move between laptop and PC.
