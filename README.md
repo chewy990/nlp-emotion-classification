@@ -1,6 +1,6 @@
 # Comparative Emotion Classification in Short User-Generated Text
 
-CM3060 Natural Language Processing mid-term coursework project.
+An NLP project comparing statistical and neural approaches to emotion classification.
 
 ## Project
 
